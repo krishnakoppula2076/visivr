@@ -70,7 +70,7 @@ const waitingRequests = new Map();
 // });
 app.post("/start", async (req, res) => {
     const { phone, request_id, SID, Token } = req.body;
-    console.log(JSON.stringify(req))
+    console.log(req)
 
     console.log("Start called:", { phone, request_id });
 
