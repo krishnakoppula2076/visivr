@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Form</title>
+</head>
+<body>
+    <h2>User Form</h2>
+
+    <form method="POST" action="/submit-form">
+        <input type="hidden" id="request_id" name="request_id" />
+
+        <label>Name:</label><br>
+        <input type="text" name="name" required><br><br>
+
+        <label>Age:</label><br>
+        <input type="number" name="age" required><br><br>
+
+        <label>Problem:</label><br>
+        <textarea name="problem" required></textarea><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        // Get request_id from URL
+        const params = new URLSearchParams(window.location.search);
+        const requestId = params.get("request_id");
+        document.getElementById("request_id").value = requestId;
+    </script>
+</body>
+</html>
